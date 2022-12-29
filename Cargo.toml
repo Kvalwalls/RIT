@@ -1,0 +1,17 @@
+[package]
+name = "rit"
+version = "1.0.0"
+authors = ["WBC/LZH/YCY/ZZH"]
+edition = "2018"
+
+[dependencies]
+chrono = "0.4"
+clap = { version = "2.33.0", features = ["yaml", "suggestions", "color"] }
+colored = "1.8.0"
+dirs = "2.0.1"
+flate2 = { version = "1.0", features = ["rust_backend"], default-features = false }
+glob = "0.3.0"
+path_abs = "0.5.0"
+regex = "1.2.1"
+sha1 = "0.6.0"
+yaml-rust = "0.4.3"
