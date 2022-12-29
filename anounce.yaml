@@ -1,0 +1,102 @@
+name: rit
+version: "1.0.0"
+author: WBC/LZH/YCY/ZZH
+about: Git By Rust
+subcommands:
+    - help:
+        about: 查看帮助信息
+    
+    - init:
+        about: 初始化本地仓库
+        args:
+            - directory:
+                help: 本地仓库名
+                takes_value: true
+            - quiet:
+                help: 默认
+                long: quiet
+                short: q
+                
+
+    - add:
+        about: 将文件从工作区添加到暂存区
+        args:
+            - PATHSPEC:
+                help: 路径
+                required: true
+                multiple: true
+            - force:
+                help: 强制添加文件
+                short: f
+                long: force
+                
+    - commit:
+        about: 将文件从暂存区添加到本地仓库
+        args:
+            - msg:
+                help: 提交信息
+                short: m
+                long: message
+                takes_value: true
+                required: true
+
+    - config:
+        about: 设置配置信息
+        args:
+            - global:
+                help: 是否为全局配置信息
+                long: global
+            - NAME:
+                help: 用户名
+                required: true
+            - VALUE:
+                help: 用户电子邮箱
+
+    - status:
+        about: 查看当前版本的状态
+        args:
+            - PATHSPEC:
+                help: 路径
+                multiple: true
+
+    - log:
+        about: 查看日志
+
+    - branch:
+        about: 查看、创建、删除分支
+        args:
+            - BRANCHNAME:
+                help: 创建或删除的分支名称
+            - delete:
+                help: 删除分支
+                long: delete
+                short: d
+            - delete-force:
+                help: 强制删除分支
+                short: D
+            - force:
+                help: 强制
+                long: force
+                short: f
+            - quiet:
+                help: 默认
+                long: quiet
+                short: q
+
+    - checkout:
+        about: 切换分支
+        args:
+            - BRANCH:
+                help: 切换的分支名称
+                required: true
+            - create:
+                help: 创建分支
+                long: create
+                short: c
+            - force-create:
+                help: 强制创建分支
+                long: force-create
+                short: C
+    
+    - rm:
+        about: 删除暂存区的文件
